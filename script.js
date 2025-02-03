@@ -22,15 +22,6 @@ function divide(a, b) {
     };
 };
 
-// const a = a.value;
-// a.value == '';
-
-// const b = b.value;
-// b.value == '';
-
-// const op = op.value;
-// op.value = '';
-
 function operate(op) {
     if (op == 0) {
         add(a, b);
@@ -45,10 +36,18 @@ function operate(op) {
         divide(a, b);
         return c
     } else {
-        return "There has been an error"
-    }
-}
+        return "There has been an error";
+    };
+};
 
-let a = 6
-let b = 3
-console.log(operate(3))
+inputA = "6"
+let a = inputA
+
+inputB = "2"
+let b = inputB
+
+operator = "2"
+let op = operator
+
+
+console.log(operate(op))
