@@ -144,6 +144,18 @@ container.appendChild(row4);
     const buttonE = document.createElement("button");
     buttonE.classList.add("button");
     buttonE.textContent = "=";
+    buttonE.addEventListener("click", () => {
+        inputB = display.textContent;
+        a = Number(inputA);
+        b = Number(inputB);
+        display.textContent = operate(operator);
+        inputB = ""
+        operator = ""
+    });
+    
+    
+    
+    
     const button0 = document.createElement("button");
     button0.classList.add("button");
     button0.textContent = "0";
@@ -153,9 +165,9 @@ container.appendChild(row4);
     buttonC.classList.add("button");
     buttonC.textContent = "Clear";
     buttonC.addEventListener("click", () => {
-        inputA.value = 0;
-        inputB.value = 0;
-        op.value = 0;
+        inputA.value = "";
+        inputB.value = "";
+        op = "";
         display.textContent ="";
     })
 
@@ -213,6 +225,8 @@ function divide(a, b) {
 };
 
 function operate(op) {
+    console.log(a)
+    console.log(b)
     if (op == 1) {
         add(a, b);
         return c;
