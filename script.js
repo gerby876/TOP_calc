@@ -26,6 +26,23 @@ container.appendChild(row1);
     const buttonA = document.createElement("button");
     buttonA.classList.add("button");
     buttonA.textContent = "+";
+    buttonA.addEventListener("click", () => {
+        if (inputA == "") {
+            inputA = display.textContent;
+            display.textContent = "";
+            operator = "1";
+        } else if (display.textContent == "") {
+            operator = "1"
+        } else {
+            inputB = display.textContent;
+            a = Number(inputA);
+            b = Number(inputB);
+            inputA = operate(operator);
+            operator ="1";
+            inputB = "";
+            display.textContent = "";
+        };
+    });
 
     row1.appendChild(button1);
     row1.appendChild(button2);
@@ -54,6 +71,23 @@ container.appendChild(row2);
     const buttonS = document.createElement("button");
     buttonS.classList.add("button");
     buttonS.textContent = "-";
+    buttonS.addEventListener("click", () => {
+        if (inputA == "") {
+            inputA = display.textContent;
+            display.textContent = "";
+            operator = "2";
+        } else if (display.textContent == "") {
+            operator = "2"
+        } else {
+            inputB = display.textContent;
+            a = Number(inputA);
+            b = Number(inputB);
+            inputA = operate(operator);
+            operator ="2";
+            inputB = "";
+            display.textContent = "";
+        };
+    });
 
     row2.appendChild(button4);
     row2.appendChild(button5);
@@ -81,6 +115,23 @@ container.appendChild(row3);
     const buttonX = document.createElement("button");
     buttonX.classList.add("button");
     buttonX.textContent = "X";
+    buttonX.addEventListener("click", () => {
+        if (inputA == "") {
+            inputA = display.textContent;
+            display.textContent = "";
+            operator = "3";
+        } else if (display.textContent == "") {
+            operator = "3"
+        } else {
+            inputB = display.textContent;
+            a = Number(inputA);
+            b = Number(inputB);
+            inputA = operate(operator);
+            operator ="3";
+            inputB = "";
+            display.textContent = "";
+        };
+    });
 
     row3.appendChild(button7);
     row3.appendChild(button8);
@@ -111,6 +162,23 @@ container.appendChild(row4);
     const buttonD = document.createElement("button");
     buttonD.classList.add("button");
     buttonD.textContent = "/";
+    buttonD.addEventListener("click", () => {
+        if (inputA == "") {
+            inputA = display.textContent;
+            display.textContent = "";
+            operator = "4";
+        } else if (display.textContent == "") {
+            operator = "4"
+        } else {
+            inputB = display.textContent;
+            a = Number(inputA);
+            b = Number(inputB);
+            inputA = operate(operator);
+            operator ="4";
+            inputB = "";
+            display.textContent = "";
+        };
+    });
 
     row4.appendChild(buttonE);
     row4.appendChild(button0);
@@ -145,31 +213,25 @@ function divide(a, b) {
 };
 
 function operate(op) {
-    if (op == 0) {
+    if (op == 1) {
         add(a, b);
-        return c
-    } else if (op == 1) {
-        subtract(a, b);
-        return c
+        return c;
     } else if (op == 2) {
-        multiply(a, b);
-        return c
+        subtract(a, b);
+        return c;
     } else if (op == 3) {
+        multiply(a, b);
+        return c;
+    } else if (op == 4) {
         divide(a, b);
-        return c
+        return c;
     } else {
         return "There has been an error";
     };
 };
 
-inputA = "6"
-let a = inputA
+inputA = "";
 
-inputB = "2"
-let b = inputB
+inputB = "";
 
-operator = "2"
-let op = operator
-
-
-console.log(operate(op))
+operator = "";
