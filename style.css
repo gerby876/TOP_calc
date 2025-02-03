@@ -28,4 +28,10 @@ body{
     border: solid;
     flex: 1;
     margin: 1vh;
+    display: flex;
+}
+
+.button{
+    flex: 1;
+    font-size: large;
 }
