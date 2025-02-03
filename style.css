@@ -1,0 +1,31 @@
+body{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: black;
+    height: 75vh;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    }
+
+.display {
+    height: 20vh;
+    background-color: green;
+    border: solid;
+    flex: 1;
+    margin: 1vh;
+}
+
+.rows {
+    height: 20vh;
+    background-color: blue;
+    border: solid;
+    flex: 1;
+    margin: 1vh;
+}

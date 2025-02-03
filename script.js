@@ -1,3 +1,22 @@
+const container = document.querySelector(".container")
+
+const display = document.createElement("div");
+display.classList.add("display");
+container.appendChild(display);
+
+function rows() {
+    for (i=0; i<4; i++) {
+    const row = document.createElement("div");
+    row.classList.add("rows");
+    container.appendChild(row);
+    };
+};
+
+rows()
+
+
+
+
 function add(a, b) {
     c = a + b;
     return c;
