@@ -20,6 +20,10 @@ body{
     border: solid;
     flex: 1;
     margin: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 72px;
 }
 
 .rows {

@@ -2,6 +2,7 @@ const container = document.querySelector(".container")
 
 const display = document.createElement("div");
 display.classList.add("display");
+display.textContent = "45369413"
 container.appendChild(display);
 
 const row1 = document.createElement("div");
