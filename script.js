@@ -11,17 +11,35 @@ container.appendChild(row1);
     const button1 = document.createElement("button");
     button1.classList.add("button");
     button1.textContent = "1";
-    button1.addEventListener ("click", () => display.textContent = display.textContent + "1");
+    button1.addEventListener ("click", () => 
+        {if (outputA !== "") {
+            outputA = ""
+            display.textContent = ""
+        };
+        display.textContent = display.textContent + "1"
+    });
 
     const button2 = document.createElement("button");
     button2.classList.add("button");
     button2.textContent = "2";
-    button2.addEventListener ("click", () => display.textContent = display.textContent + "2");
+    button2.addEventListener ("click", () => 
+        {if (outputA !== "") {
+            outputA = ""
+            display.textContent = ""
+        };
+        display.textContent = display.textContent + "2"
+    });
 
     const button3 = document.createElement("button");
     button3.classList.add("button");
     button3.textContent = "3";
-    button3.addEventListener ("click", () => display.textContent = display.textContent + "3");
+    button3.addEventListener ("click", () => 
+        {if (outputA !== "") {
+            outputA = ""
+            display.textContent = ""
+        };
+            display.textContent = display.textContent + "3"
+        });
 
     const buttonA = document.createElement("button");
     buttonA.classList.add("button");
@@ -40,7 +58,8 @@ container.appendChild(row1);
             inputA = operate(operator);
             operator ="1";
             inputB = "";
-            display.textContent = "";
+            outputA = operate(operator);
+            display.textContent = outputA;
         };
     });
 
@@ -56,17 +75,35 @@ container.appendChild(row2);
     const button4 = document.createElement("button");
     button4.classList.add("button");
     button4.textContent = "4";
-    button4.addEventListener ("click", () => display.textContent = display.textContent + "4");
+    button4.addEventListener ("click", () => 
+        {if (outputA !== "") {
+            outputA = ""
+            display.textContent = ""
+        };
+        display.textContent = display.textContent + "4"
+    });
 
     const button5 = document.createElement("button");
     button5.classList.add("button");
     button5.textContent = "5";
-    button5.addEventListener ("click", () => display.textContent = display.textContent + "5");
+    button5.addEventListener ("click", () => 
+        {if (outputA !== "") {
+            outputA = ""
+            display.textContent = ""
+        };
+        display.textContent = display.textContent + "5"
+    });
 
     const button6 = document.createElement("button");
     button6.classList.add("button");
     button6.textContent = "6";
-    button6.addEventListener ("click", () => display.textContent = display.textContent + "6");
+    button6.addEventListener ("click", () => 
+        {if (outputA !== "") {
+            outputA = ""
+            display.textContent = ""
+        };
+        display.textContent = display.textContent + "6"
+    });
 
     const buttonS = document.createElement("button");
     buttonS.classList.add("button");
@@ -100,17 +137,35 @@ container.appendChild(row3);
     const button7 = document.createElement("button");
     button7.classList.add("button");
     button7.textContent = "7";
-    button7.addEventListener ("click", () => display.textContent = display.textContent + "7");
+    button7.addEventListener ("click", () => 
+        {if (outputA !== "") {
+            outputA = ""
+            display.textContent = ""
+        };
+        display.textContent = display.textContent + "7"
+    });
 
     const button8 = document.createElement("button");
     button8.classList.add("button");
     button8.textContent = "8";
-    button8.addEventListener ("click", () => display.textContent = display.textContent + "8");
+    button8.addEventListener ("click", () => 
+        {if (outputA !== "") {
+            outputA = ""
+            display.textContent = ""
+        };
+        display.textContent = display.textContent + "8"
+    });
 
     const button9 = document.createElement("button");
     button9.classList.add("button");
     button9.textContent = "9";
-    button9.addEventListener ("click", () => display.textContent = display.textContent + "9");
+    button9.addEventListener ("click", () => 
+        {if (outputA !== "") {
+            outputA = ""
+            display.textContent = ""
+        };
+        display.textContent = display.textContent + "9"
+    });
 
     const buttonX = document.createElement("button");
     buttonX.classList.add("button");
@@ -145,12 +200,16 @@ container.appendChild(row4);
     buttonE.classList.add("button");
     buttonE.textContent = "=";
     buttonE.addEventListener("click", () => {
+        if (inputA == "" || operator == "" || display.textContent == "") {
+            return;
+        };
         inputB = display.textContent;
         a = Number(inputA);
         b = Number(inputB);
         display.textContent = operate(operator);
-        inputB = ""
-        operator = ""
+        inputA = "";
+        inputB = "";
+        operator = "";
     });
     
     
@@ -159,17 +218,23 @@ container.appendChild(row4);
     const button0 = document.createElement("button");
     button0.classList.add("button");
     button0.textContent = "0";
-    button0.addEventListener ("click", () => display.textContent = display.textContent + "0");
+    button0.addEventListener ("click", () => 
+        {if (outputA !== "") {
+            outputA = ""
+            display.textContent = ""
+        };
+        display.textContent = display.textContent + "0"
+    });
 
     const buttonC = document.createElement("button");
     buttonC.classList.add("button");
     buttonC.textContent = "Clear";
     buttonC.addEventListener("click", () => {
-        inputA.value = "";
-        inputB.value = "";
+        inputA = "";
+        inputB = "";
         op = "";
         display.textContent ="";
-    })
+    });
 
     const buttonD = document.createElement("button");
     buttonD.classList.add("button");
@@ -202,17 +267,20 @@ container.appendChild(row4);
 
 function add(a, b) {
     c = a + b;
-    return c;
+    d = Math.round(c*100)/100;
+    return d;
 };
 
 function subtract(a, b) {
     c = a - b;
-    return c;
+    d = Math.round(c*100)/100;
+    return d;
 };
 
 function multiply(a, b) {
     c = a * b;
-    return c;
+    d = Math.round(c*100)/100;
+    return d;
 };
 
 function divide(a, b) {
@@ -220,25 +288,24 @@ function divide(a, b) {
         return "You have ended the world... well done!";
     } else {
         c = a / b;
-        return c;
+        d = Math.round(c*100)/100;
+        return d;
     };
 };
 
 function operate(op) {
-    console.log(a)
-    console.log(b)
     if (op == 1) {
         add(a, b);
-        return c;
+        return d;
     } else if (op == 2) {
         subtract(a, b);
-        return c;
+        return d;
     } else if (op == 3) {
         multiply(a, b);
-        return c;
+        return d;
     } else if (op == 4) {
         divide(a, b);
-        return c;
+        return d;
     } else {
         return "There has been an error";
     };
@@ -249,3 +316,5 @@ inputA = "";
 inputB = "";
 
 operator = "";
+
+outputA = "";
